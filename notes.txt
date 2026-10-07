@@ -1,0 +1,21 @@
+create database 25fulldayecom;
+	
+	create table users(
+		userId int primary key auto_increment, 
+		firstName varchar(20),
+		lastName varchar(20),
+		email varchar(30),
+		password varchar(20), 
+		role varchar(20)
+	);
+
+drop table users; 
+
+
+insert into users (firstName,lastName,email,password,role) values (?,?,?,?,?);
+
+Ecom 
+
+
+		User 
+			Signup  -> fn ln em pwd --> db insert --> 
