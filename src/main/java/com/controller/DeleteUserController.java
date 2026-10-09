@@ -33,7 +33,7 @@ public class DeleteUserController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("ListUserController");
 		
 	}
 

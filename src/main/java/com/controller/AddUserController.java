@@ -51,6 +51,6 @@ public class AddUserController extends HttpServlet {
 		}
 
 		// redirect
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("ListUserController");
 	}
 }
