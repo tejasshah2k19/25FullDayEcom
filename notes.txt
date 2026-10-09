@@ -18,4 +18,17 @@ Ecom
 
 
 		User 
-			Signup  -> fn ln em pwd --> db insert --> 
+			Signup  -> fn ln em pwd --> db insert -->
+			
+------------------------------------------------------------------
+
+https://us02web.zoom.us/rec/share/jwUZ3EGMCgHWg8pwknLDx47vCGe6e4mgnDXwr11j5FcGPg-Ne6RNdR_e3oMHoCqj.mpgfl2Pc6KcGzJ6o?startTime=1791356131000
+Passcode: 2b+mn4Ec
+
+https://us02web.zoom.us/rec/share/OpJJCN7cacxyP_oN2yC2p_EE8QVs-yBKDkCGKw3TZJVYKhUaapuwfx2aNEqSd5fl.ayFt01xNJuuRyD-F 
+Passcode: +=ch9uVh
+
+https://us02web.zoom.us/rec/share/7TZt6GNasFBJPINMOWsqqubFj9k1XAm3TK3Q-XIJ_gebezh-1ZrHct4SS3fZfvJw.yQRaxnECfoVRnNEz 
+Passcode: Hr!9QMZ.
+
+-----------------------------------------------------------------------
