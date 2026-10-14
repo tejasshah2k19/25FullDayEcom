@@ -32,3 +32,53 @@ https://us02web.zoom.us/rec/share/7TZt6GNasFBJPINMOWsqqubFj9k1XAm3TK3Q-XIJ_gebez
 Passcode: Hr!9QMZ.
 
 -----------------------------------------------------------------------
+
+
+Admin -> User Manage , Product Manage
+
+User  -> Signup  , Login , Home { products } 
+
+Login 
+	Login.jsp  { email,password}
+	LoginController 
+			read email password 
+			select * from users where emial = ? and password = ? 
+			
+			if(rs.next()){
+				userBean
+		
+				if role is admin 
+						AdminDashboard.jsp 
+				else 
+						Home.jsp { products } 
+			}else{
+				response.sendRedirect("Login.jsp");//invalid credentials 
+			}
+			
+	
+ 
+ForgetPassword ->
+				Email : [         ]
+						submit 
+						
+ForgetPasswordController 
+				email read 
+				db present ? yes 
+					 random otp send mail {console print } 
+					 user table : email : otp column : otp update 
+				response if email is valid then you will get password resent instructions. 
+				ChangePassword.jsp
+				Email : 
+				OTP : 
+				New Password : 
+				CnNEwPwd : 
+								[ update password ] 
+				 
+---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
