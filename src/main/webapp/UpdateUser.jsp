@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,23 +132,18 @@
       <form action="UpdateUserController" method="post" class="needs-validation" novalidate>
         <div class="row g-3">
 
-          <div class="col-12">
-            <label for="userId" class="form-label">User ID</label>
-            <input type="number" class="form-control" id="userId" name="userId" min="1" required>
-            <div class="invalid-feedback">Enter the ID of the user to update.</div>
-            <div class="hint">The ID of the existing user you want to change.</div>
-          </div>
+            <input type="hidden" class="form-control" id="userId" name="userId" value="${userId}" min="1" required>
 
           <div class="col-12 col-sm-6">
             <label for="firstName" class="form-label">First name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName"
+            <input type="text" class="form-control" id="firstName" name="firstName" value="${firstName}"
                    autocomplete="given-name" maxlength="50" required>
             <div class="invalid-feedback">Enter the first name.</div>
           </div>
 
           <div class="col-12 col-sm-6">
             <label for="lastName" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName"
+            <input type="text" class="form-control" id="lastName" name="lastName" value="${lastName}"
                    autocomplete="family-name" maxlength="50" required>
             <div class="invalid-feedback">Enter the last name.</div>
           </div>

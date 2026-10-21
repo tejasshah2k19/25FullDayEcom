@@ -289,7 +289,11 @@ body {
 							<td><%=esc(user.getLastName())%></td>
 							<td><%=user.getEmail()%></td>
 							<td><%=user.getRole() %></td>
-							<td><a href="DeleteUserController?userId=<%=user.getUserId()%>">Delete</a> | Edit </td>
+							<td><a href="DeleteUserController?userId=<%=user.getUserId()%>">Delete</a> | 
+							
+							<a href="EditUserController?userId=<%=user.getUserId()%>">	Edit</a>
+							
+							 </td>
 						</tr>
 						<%
 						}
