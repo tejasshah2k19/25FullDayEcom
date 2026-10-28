@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.util.DbConnection;
 
@@ -33,6 +34,10 @@ public class LoginController extends HttpServlet {
 			if(rs.next()) {
 				//success 
 				String role = rs.getString("role");
+				int userId = rs.getInt("userId"); 
+				
+				HttpSession session =  request.getSession();
+				session.setAttribute("userId", userId);
 				
 				if(role.equals("ADMIN")) {
 					//admin 

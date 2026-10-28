@@ -12,8 +12,10 @@
 <body>
 
 	<%
+	int userId = (int)session.getAttribute("userId");
+	
 	AccountDao dao = new AccountDao();
-	ArrayList<AccountBean> listOfAccounts = dao.getAllAccounts();
+	ArrayList<AccountBean> listOfAccounts = dao.getAllAccountsByUserId(userId);
 	%>
 
 	<form>
