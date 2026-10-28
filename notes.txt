@@ -77,6 +77,62 @@ ForgetPasswordController
 ------------------------------------------------------------------------------------------
 
 
+product table : productId , name , price , category
+
+
+
+
+create table vendors(
+	vendorId int primary key auto_increment,
+	vendorName varchar(30) NOT NULL,
+	userId int references users
+);
+
+insert into vendors (vendorName) values ('Dmart');
+
+
+
+insert into vendors (vendorName,userId) values ('Hocco',1);
+insert into vendors (vendorName,userId) values ('IOCL',1);
+
+insert into vendors (vendorName,userId) values ('Sainik Seva',5);
+insert into vendors (vendorName,userId) values ('NIC Icecream',5);
+
+select * from vendors where userId = 1 or userId is null;
+
+select v.vendorName,u.firstName from vendors v , users u where v.userId = u.userId; 
+
+select v.vendorName,u.firstName from vendors v left join users u on v.userId = u.userId; 
+
+create table accounts(
+	accountId int primary key auto_increment, 
+	accountName varchar(30),
+	amount float, 
+	thresholdLimit int,
+	userId int references users
+);
+
+
+insert into accounts  values (1,'UPI',5000,1000,1);
+
+insert into accounts values (2,'CC-ICICI',50000,1000,1);
+
+insert into accounts values (3,'CC-SBI',150000,1000,1);
+
+insert into accounts values (4,'UPI',15000,1000,3);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
