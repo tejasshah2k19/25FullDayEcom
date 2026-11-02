@@ -120,7 +120,7 @@ insert into accounts values (2,'CC-ICICI',50000,1000,1);
 insert into accounts values (3,'CC-SBI',150000,1000,1);
 
 insert into accounts values (4,'UPI',15000,1000,3);
-
+------------------------------------------------------------------------
 
 
 

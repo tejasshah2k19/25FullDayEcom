@@ -1,7 +1,8 @@
-<%@page import="com.bean.UserBean"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%!// Escapes HTML so names containing < > & " ' can't break the page
 	private String esc(String s) {
 		if (s == null)
@@ -9,10 +10,6 @@
 		return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'",
 				"&#39;");
 	}%>
-<%
-ArrayList<UserBean> users = (ArrayList<UserBean>) request.getAttribute("users");
-int total = (users == null) ? 0 : users.size();
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,72 +235,61 @@ body {
 
 		<section class="table-card">
 			<div class="card-top">
-				<strong>User list</strong> <span class="count-badge"><%=total%>
-					<%=total == 1 ? "user" : "users"%></span>
+				<strong>User list</strong> <span class="count-badge">	${users.size()}
+					${users.size()} </span>
 			</div>
 
-			<%
-			if (total == 0) {
-			%>
-			<div class="empty-state">
-				<i class="bi bi-people"></i>
-				<p class="mb-1 fw-semibold">No users to show</p>
-				<p class="mb-0">
-					Add a user, or open this page through the <strong>List
-						users</strong> link on the home page.
-				</p>
-			</div>
-			<%
-			} else {
-			%>
-			<div class="table-responsive">
-				<table class="table table-hover align-middle">
-					<thead>
-						<tr>
-							<th scope="col" class="col-index">#</th>
-							<th scope="col">First name</th>
-							<th scope="col">Last name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Role</th>
-							<th scope="col">Action</th>
-							
+			<c:if test="${users.size() == 0 }">
+				<div class="empty-state">
+					<i class="bi bi-people"></i>
+					<p class="mb-1 fw-semibold">No users to show</p>
+					<p class="mb-0">
+						Add a user, or open this page through the <strong>List
+							users</strong> link on the home page.
+					</p>
+				</div>
+			</c:if>
 
-						</tr>
-					</thead>
-					<tbody>
-						<%
-						int i = 0;
-						for (UserBean user : users) {
-							i++;
-							String first = user.getFirstName();
-							String initial = (first != null && !first.isEmpty()) ? first.substring(0, 1).toUpperCase() : "?";
-						%>
-						<tr>
-							<td class="col-index"><%=i%></td>
-							<td>
-								<div class="name-cell">
-									<span class="avatar" aria-hidden="true"><%=esc(initial)%></span>
-									<span><%=esc(first)%></span>
-								</div>
-							</td>
-							<td><%=esc(user.getLastName())%></td>
-							<td><%=user.getEmail()%></td>
-							<td><%=user.getRole() %></td>
-							<td><a href="DeleteUserController?userId=<%=user.getUserId()%>">Delete</a> | 
-							
-							<a href="EditUserController?userId=<%=user.getUserId()%>">	Edit</a>
-							
-							 </td>
-						</tr>
-						<%
-						}
-						%>
-					</tbody>
-				</table>
-			</div>
-			<%
-			}
-			%>
+
+			<c:if test="${users.size() != 0 }">
+
+				<div class="table-responsive">
+					<table class="table table-hover align-middle">
+						<thead>
+							<tr>
+								<th scope="col" class="col-index">#</th>
+								<th scope="col">First name</th>
+								<th scope="col">Last name</th>
+								<th scope="col">Email</th>
+								<th scope="col">Role</th>
+								<th scope="col">Action</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+
+							<c:forEach items="${users}" var="user" varStatus="status">
+
+									<td class="col-index">${status.count}</td>
+									<td>
+										<div class="name-cell">
+											<span class="avatar" aria-hidden="true">${user.firstName.toUpperCase().charAt(0) }</span>
+											<span>${user.firstName}</span>
+										</div>
+									</td>
+									<td>${user.lastName}</td>
+									<td>${user.email }</td>
+									<td>${user.role }</td>
+									<td><a href="DeleteUserController?userId=${user.userId}">Delete</a>
+										| <a href="EditUserController?userId=${user.userId}"> Edit</a></td>
+								</tr>
+
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</c:if>
 		</section>
 
 	</main>

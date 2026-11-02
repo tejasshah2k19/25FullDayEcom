@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>25FullDayEcom Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -18,13 +18,14 @@
 		</dependency>
 
 
-	<!-- Source: https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.0.1</version>
-    <scope>provided</scope>
-</dependency>
+		<!-- Source:
+		https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Source:
 		https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
@@ -33,6 +34,13 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.4.0</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source: https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 

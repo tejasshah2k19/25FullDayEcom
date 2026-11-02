@@ -18,13 +18,13 @@
 	ArrayList<AccountBean> listOfAccounts = dao.getAllAccountsByUserId(userId);
 	%>
 
-	<form>
+	<form action="AddExpenseController" method="post">
 		Title : <input type="text" name="title" /><br>
 		<Br> Amount : <input type="text" name="amount" /><br>
 		<Br> Account : <select name="account">
 			<option>Select Account</option>
 			<%for(AccountBean bean:listOfAccounts) {%>
-				<option><%=bean.getAccountName()%></option>
+				<option value="<%=bean.getAccountId()%>"><%=bean.getAccountName()%></option>
 			<%} %>		
 			
 		</select><br>
